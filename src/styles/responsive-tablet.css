@@ -1,0 +1,748 @@
+/* Tablet */
+@media (min-width: 1440px) {
+  .container {
+    width: 1180px;
+  }
+  .home-hero {
+    gap: 80px;
+    min-height: 700px;
+  }
+  .hero-copy h1 {
+    font-size: 71px;
+  }
+  .hero-lab {
+    margin-left: 15px;
+  }
+  .hero-playground {
+    padding-right: 25px;
+  }
+  .hero-description {
+    font-size: 15px;
+  }
+  .hero-lab-title h3 {
+    font-size: 29px;
+  }
+  .preview-visual {
+    height: 225px;
+  }
+  .preview-visual .pulley-svg {
+    height: 250px;
+  }
+  .hero-lab-heading {
+    font-size: 10px;
+  }
+  .preview-slider label {
+    font-size: 12px;
+  }
+  .hero-lab {
+    padding-top: 25px;
+  }
+  .hero-copy .hero-eyebrow {
+    font-size: 11px;
+  }
+}
+@media (max-width: 1100px) {
+  .container {
+    width: calc(100% - 64px);
+  }
+  .header-inner {
+    gap: 20px;
+  }
+  .desktop-nav {
+    gap: 21px;
+    margin-left: 0;
+  }
+  .home-hero {
+    gap: 35px;
+    min-height: 620px;
+  }
+  .hero-copy h1 {
+    font-size: 53px;
+    letter-spacing: -3px;
+  }
+  .hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.2px;
+  }
+  .hero-description {
+    font-size: 14px;
+  }
+  .hero-actions {
+    gap: 9px;
+  }
+  .hero-actions .button {
+    font-size: 12px;
+    padding-inline: 15px;
+    gap: 9px;
+  }
+  .hero-lab {
+    padding: 18px 19px 0;
+  }
+  .preview-link {
+    margin-inline: -19px;
+  }
+  .hero-lab-title h3 {
+    font-size: 24px;
+  }
+  .hero-lab-heading {
+    font-size: 10px;
+  }
+  .preview-visual {
+    height: 195px;
+  }
+  .preview-visual .pulley-svg {
+    height: 215px;
+  }
+  .floating-lab-note {
+    right: -23px;
+    padding: 9px 10px;
+    font-size: 10px;
+  }
+  .belief-strip .container {
+    gap: 20px;
+  }
+  .belief-strip span {
+    font-size: 12px;
+    gap: 8px;
+  }
+  .belief-strip .belief-tagline {
+    font-size: 11px;
+  }
+  .subject-card {
+    padding: 22px 19px 17px;
+  }
+  .subject-top {
+    margin-bottom: 27px;
+    gap: 6px;
+  }
+  .subject-top .status-pill {
+    font-size: 10px;
+    padding-inline: 6px;
+  }
+  .subject-icon {
+    width: 39px;
+    height: 39px;
+  }
+  .featured-copy {
+    padding: 33px;
+  }
+  .km-explainer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .km-tradeoff {
+    padding-left: 65px;
+  }
+  .concept-intro {
+    gap: 30px;
+  }
+  .concept-question {
+    padding: 18px;
+  }
+  .simulator-workspace {
+    grid-template-columns: 235px minmax(0, 1fr);
+  }
+  .pulley-controls {
+    padding-inline: 20px;
+  }
+  .visual-panel .pulley-svg {
+    min-height: 260px;
+  }
+  .stat-card {
+    padding: 18px;
+  }
+  .stat-label {
+    font-size: 10px;
+  }
+  .formula-grid {
+    gap: 15px;
+  }
+  .mnemonic-card {
+    padding: 22px;
+  }
+  .mnemonic-card h3 {
+    font-size: 19px;
+  }
+  .symbol-glossary > span {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .symbol-glossary i {
+    display: block;
+  }
+  .exercise-detail-grid {
+    grid-template-columns: minmax(0, 1fr) 245px;
+  }
+  .exercise-sidebar {
+    padding: 22px;
+  }
+}
+@media (max-width: 860px) {
+  .container {
+    width: calc(100% - 48px);
+  }
+  .brand {
+    font-size: 21px;
+  }
+  .brand svg {
+    width: 27px;
+    height: 27px;
+  }
+  .desktop-nav {
+    gap: 17px;
+  }
+  .desktop-nav > a {
+    font-size: 12px;
+  }
+  .nav-new {
+    display: none;
+  }
+  .header-cta {
+    font-size: 11px;
+    padding-inline: 12px;
+    gap: 9px;
+  }
+  .header-inner {
+    height: 76px;
+  }
+  .home-hero {
+    gap: 27px;
+    padding-block: 55px 45px;
+    min-height: 590px;
+    grid-template-columns: 1.1fr 1fr;
+  }
+  .hero-playground {
+    padding-inline: 0 15px;
+  }
+  .hero-copy h1 {
+    font-size: 44px;
+    letter-spacing: -2.5px;
+  }
+  .hero-eyebrow {
+    font-size: 10px;
+    gap: 6px;
+    letter-spacing: 1px;
+  }
+  .tiny-orbit {
+    width: 20px;
+    height: 20px;
+  }
+  .hero-description {
+    font-size: 13px;
+    margin-top: 24px;
+  }
+  .hero-actions {
+    gap: 9px;
+    flex-wrap: wrap;
+  }
+  .hero-actions .button {
+    min-height: 43px;
+    font-size: 11px;
+    gap: 7px;
+    padding-inline: 12px;
+  }
+  .hero-footnote {
+    font-size: 10px;
+    gap: 5px;
+  }
+  .hero-scroll {
+    font-size: 10px;
+    letter-spacing: 0.8px;
+    gap: 7px;
+    margin-top: 35px;
+  }
+  .hero-scroll .scroll-line {
+    width: 20px;
+  }
+  .hero-lab {
+    padding-inline: 17px;
+  }
+  .hero-lab-title h3 {
+    font-size: 22px;
+  }
+  .hero-lab-heading {
+    font-size: 10px;
+    letter-spacing: 0.7px;
+  }
+  .preview-km {
+    padding: 5px 6px;
+    font-size: 10px;
+    gap: 4px;
+  }
+  .preview-km strong {
+    font-size: 14px;
+  }
+  .preview-visual {
+    height: 185px;
+    margin-inline: -8px;
+  }
+  .preview-visual .pulley-svg {
+    height: 205px;
+  }
+  .preview-result {
+    gap: 10px;
+    padding-block: 12px;
+  }
+  .preview-result > span {
+    font-size: 10px;
+  }
+  .preview-result strong {
+    font-size: 19px;
+  }
+  .preview-slider label {
+    font-size: 10px;
+  }
+  .preview-slider label strong {
+    font-size: 10px;
+  }
+  .preview-link {
+    margin-inline: -17px;
+    font-size: 10px;
+    padding: 11px;
+    gap: 20px;
+  }
+  .floating-lab-note {
+    right: -15px;
+    top: 44%;
+    padding: 7px 8px;
+    font-size: 10px;
+    gap: 5px;
+  }
+  .floating-lab-note svg {
+    width: 13px;
+  }
+  .spark-one {
+    font-size: 32px;
+    right: -2px;
+  }
+  .belief-strip .container {
+    gap: 17px;
+    justify-content: space-between;
+    min-height: 65px;
+  }
+  .belief-strip span {
+    font-size: 11px;
+    gap: 6px;
+  }
+  .belief-strip span svg {
+    width: 16px;
+  }
+  .belief-strip .belief-tagline {
+    display: none;
+  }
+  .belief-strip i {
+    height: 15px;
+  }
+  .subjects-section {
+    padding-block: 53px;
+  }
+  .section-heading {
+    gap: 20px;
+    margin-bottom: 25px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  .section-description {
+    font-size: 13px;
+  }
+  .small-meta {
+    font-size: 10px;
+    letter-spacing: 0.8px;
+  }
+  .subject-grid {
+    gap: 13px;
+  }
+  .subject-card {
+    padding: 20px 16px 15px;
+    min-height: 280px;
+  }
+  .subject-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+    margin-bottom: 20px;
+  }
+  .subject-card .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.8px;
+  }
+  .subject-card h3 {
+    font-size: 22px;
+  }
+  .subject-card p {
+    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+  .subject-bottom {
+    font-size: 10px;
+    gap: 7px;
+  }
+  .card-arrow {
+    width: 23px;
+    height: 23px;
+    flex-shrink: 0;
+  }
+  .card-arrow svg {
+    width: 15px;
+  }
+  .featured-copy {
+    padding: 29px;
+  }
+  .featured-copy h2 {
+    font-size: 25px;
+  }
+  .featured-badge {
+    font-size: 10px;
+  }
+  .featured-copy > p {
+    font-size: 12px;
+  }
+  .featured-meta {
+    gap: 5px;
+    flex-wrap: wrap;
+    margin-bottom: 19px;
+  }
+  .featured-meta span {
+    font-size: 10px;
+  }
+  .featured-visual {
+    min-height: 300px;
+  }
+  .how-section {
+    padding-bottom: 50px;
+  }
+  .how-card h3 {
+    font-size: 14px;
+  }
+  .how-card p {
+    font-size: 12px;
+  }
+  .how-grid {
+    gap: 23px;
+  }
+  .how-intro {
+    font-size: 12px;
+  }
+  .bottom-cta {
+    padding: 30px;
+    margin-bottom: 50px;
+  }
+  .bottom-cta h2 {
+    font-size: 25px;
+  }
+  .bottom-cta .button {
+    font-size: 12px;
+    gap: 10px;
+  }
+  .footer-note {
+    margin-left: 0;
+  }
+  .footer-inner {
+    min-height: 130px;
+    gap: 20px;
+  }
+  .footer-inner .brand {
+    font-size: 17px;
+  }
+  .footer-inner .brand svg {
+    width: 22px;
+    height: 22px;
+  }
+  .footer-inner > div > p {
+    font-size: 10px;
+  }
+  .footer-note,
+  .footer-copy {
+    font-size: 10px;
+  }
+  .category-header h1 {
+    font-size: 38px;
+  }
+  .topic-card {
+    padding: 24px;
+    gap: 16px;
+  }
+  .topic-icon {
+    width: 42px;
+    height: 42px;
+  }
+  .topic-icon svg {
+    width: 25px;
+  }
+  .topic-card h3 {
+    font-size: 22px;
+  }
+  .topic-card > svg {
+    width: 19px;
+  }
+  .topic-card p {
+    font-size: 13px;
+  }
+  .concept-cards {
+    gap: 13px;
+  }
+  .concept-card {
+    padding: 16px;
+  }
+  .concept-visual {
+    height: 140px;
+  }
+  .concept-visual .pulley-svg {
+    height: 160px;
+  }
+  .concept-card h3 {
+    font-size: 15px;
+  }
+  .concept-card p {
+    font-size: 12px;
+  }
+  .concept-card > small {
+    font-size: 10px;
+  }
+  .concept-intro {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 25px;
+  }
+  .concept-intro h2 {
+    font-size: 26px;
+  }
+  .concept-question {
+    padding: 15px;
+    gap: 9px;
+  }
+  .concept-question p {
+    font-size: 11px;
+  }
+  .concept-question svg {
+    width: 20px;
+  }
+  .concept-intro > div > p {
+    font-size: 13px;
+  }
+  .lesson-header h1 {
+    font-size: 47px;
+  }
+  .lesson-header-note > span:last-child {
+    font-size: 10px;
+  }
+  .simulator-workspace {
+    grid-template-columns: 205px minmax(0, 1fr);
+  }
+  .simulator-toolbar {
+    padding: 11px 12px;
+  }
+  .pulley-type-tabs button {
+    font-size: 12px;
+    padding: 8px 9px;
+    gap: 6px;
+  }
+  .toolbar-caption {
+    font-size: 10px;
+  }
+  .pulley-controls {
+    padding: 17px;
+    gap: 17px;
+  }
+  .panel-label {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    gap: 5px;
+  }
+  .panel-label > span {
+    gap: 5px;
+  }
+  .panel-label svg {
+    width: 13px;
+  }
+  .number-control > label {
+    font-size: 12px;
+  }
+  .number-input {
+    height: 38px;
+  }
+  .number-input > input {
+    font-size: 14px;
+    padding: 9px 10px;
+  }
+  .number-input > span {
+    font-size: 10px;
+  }
+  .control-note {
+    font-size: 10px;
+    line-height: 1.8;
+  }
+  .visual-panel {
+    padding: 15px 16px;
+  }
+  .visual-panel .pulley-svg {
+    min-height: 245px;
+  }
+  .visual-legend {
+    font-size: 10px;
+    gap: 10px;
+  }
+  .lift-control {
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .lift-control label {
+    font-size: 11px;
+  }
+  .scale-note {
+    font-size: 10px;
+  }
+  .stat-card {
+    padding: 16px;
+  }
+  .stat-label {
+    font-size: 10px;
+    gap: 5px;
+  }
+  .stat-label svg {
+    width: 13px;
+  }
+  .stat-card strong {
+    font-size: 25px;
+  }
+  .stat-card small {
+    font-size: 10px;
+  }
+  .insight-note p {
+    font-size: 11px;
+  }
+  .calculation-grid {
+    gap: 13px;
+  }
+  .calculation-card {
+    padding: 20px 18px;
+  }
+  .calculation-card h3 {
+    font-size: 12px;
+  }
+  .math-lines p {
+    font-size: 10px;
+  }
+  .math-equation {
+    font-size: 16px;
+  }
+  .math-substitution {
+    font-size: 11px;
+  }
+  .calculation-answer {
+    font-size: 12px;
+  }
+  .work-note {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .formula-grid {
+    grid-template-columns: 0.95fr 1.1fr 1fr;
+    gap: 15px;
+  }
+  .triangle-card {
+    padding: 13px;
+    min-height: 250px;
+  }
+  .triangle-symbol {
+    font-size: 23px;
+  }
+  .formula-explanation {
+    padding-inline: 0;
+  }
+  .formula-explanation h3 {
+    font-size: 14px;
+  }
+  .selected-equation {
+    font-size: 26px;
+  }
+  .formula-explanation > p:last-child {
+    font-size: 12px;
+  }
+  .mnemonic-card {
+    padding: 19px 17px;
+  }
+  .mnemonic-card h3 {
+    font-size: 18px;
+  }
+  .mnemonic-card .eyebrow {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  .mnemonic-card p {
+    font-size: 11px;
+  }
+  .mnemonic-card small {
+    font-size: 10px;
+  }
+  .symbol-glossary {
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .symbol-glossary > span {
+    font-size: 10px;
+    max-width: 210px;
+  }
+  .symbol-glossary i {
+    font-size: 10px;
+  }
+  .lesson-recap {
+    gap: 25px;
+    grid-template-columns: 1.3fr 1fr;
+  }
+  .lesson-recap h2 {
+    font-size: 25px;
+  }
+  .lesson-recap li {
+    font-size: 11px;
+    line-height: 2;
+    align-items: flex-start;
+    margin-block: 8px;
+    gap: 7px;
+  }
+  .lesson-recap li svg {
+    margin-top: 1px;
+    width: 14px;
+  }
+  .recap-action {
+    padding: 22px;
+  }
+  .recap-action h3 {
+    font-size: 16px;
+  }
+  .recap-action .button {
+    font-size: 11px;
+    gap: 8px;
+  }
+  .exercise-card {
+    padding: 23px 20px;
+  }
+  .exercise-card h2 {
+    font-size: 25px;
+  }
+  .exercise-card > p {
+    font-size: 12px;
+  }
+  .exercise-card .eyebrow {
+    font-size: 10px;
+  }
+  .exercise-detail-grid {
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 19px;
+  }
+  .exercise-sidebar {
+    padding: 20px;
+  }
+  .pdf-placeholder {
+    padding: 25px;
+  }
+  .pdf-placeholder h2 {
+    font-size: 22px;
+  }
+  .pdf-placeholder p {
+    font-size: 13px;
+  }
+}

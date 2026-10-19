@@ -1,0 +1,272 @@
+/* Interactive formula triangle */
+.formula-section {
+  margin-top: 55px;
+  padding-top: 38px;
+  border-top: 1px solid var(--line);
+}
+.formula-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1fr;
+  gap: 20px;
+  margin-top: 29px;
+}
+.triangle-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  border-radius: 9px;
+  border: 1px solid #dfe6d4;
+  background: #f2f5e9;
+  min-height: 285px;
+}
+.formula-triangle {
+  width: 100%;
+  max-width: 260px;
+  position: relative;
+  aspect-ratio: 300/250;
+}
+.formula-triangle > svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.triangle-symbol {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 23%;
+  height: 26%;
+  background: transparent;
+  color: #55673b;
+  font-size: 25px;
+  font-weight: 750;
+  border-radius: 8px;
+  transition:
+    color 0.2s,
+    background 0.2s,
+    transform 0.2s;
+}
+.symbol-w {
+  top: 27%;
+  left: 38.5%;
+}
+.symbol-km {
+  left: 20%;
+  top: 64%;
+}
+.symbol-f {
+  right: 20%;
+  top: 64%;
+}
+.triangle-symbol.selected {
+  background: #d6e7bb;
+  color: #476a30;
+  box-shadow: inset 0 0 0 1px #b7cb96;
+}
+.triangle-symbol:hover {
+  color: #476a30;
+  transform: scale(1.06);
+}
+.symbol-selection {
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 1px;
+  line-height: 1;
+  margin-top: 2px;
+}
+.triangle-hint {
+  font-size: 10px;
+  color: #54673f;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 15px;
+}
+.formula-explanation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 22px 10px;
+}
+.formula-explanation .eyebrow {
+  font-size: 10px;
+  color: #566641;
+}
+.formula-explanation h3 {
+  font-size: 17px;
+  letter-spacing: -0.5px;
+  margin-top: 11px;
+  color: #506837;
+}
+.selected-equation {
+  font-size: 31px;
+  color: #496a2d;
+  font-weight: 750;
+  letter-spacing: -1px;
+  line-height: 1.5;
+  margin-top: 14px;
+  animation: formula-appear 0.2s ease-out;
+}
+.formula-explanation > p:last-child {
+  font-size: 13px;
+  color: #55663f;
+  margin-top: 14px;
+  line-height: 1.9;
+}
+.mnemonic-card {
+  padding: 24px 25px;
+  border: 1px solid #e5dcc5;
+  background: #f4eddc;
+  border-radius: 9px;
+}
+.mnemonic-icon {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ece2c6;
+  border: 1px solid #e1d4b2;
+  color: #765d27;
+  border-radius: 9px;
+  margin-bottom: 15px;
+}
+.mnemonic-card .eyebrow {
+  font-size: 10px;
+  letter-spacing: 1.3px;
+  color: #705f39;
+}
+.mnemonic-card h3 {
+  font-size: 21px;
+  letter-spacing: -0.7px;
+  line-height: 1.4;
+  color: #755e29;
+  margin-top: 9px;
+}
+.mnemonic-card p {
+  font-size: 12px;
+  line-height: 1.9;
+  color: #6f5f3a;
+  margin-top: 13px;
+}
+.mnemonic-card p strong {
+  font-weight: 700;
+  color: #725e33;
+}
+.mnemonic-equation {
+  display: inline-block;
+  padding: 6px 10px;
+  background: #eee3c5;
+  border: 1px solid #e0d3ae;
+  border-radius: 4px;
+  color: #755e24;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 12px;
+}
+.mnemonic-card small {
+  display: block;
+  color: #6d5f3c;
+  font-size: 10px;
+  line-height: 1.8;
+  margin-top: 10px;
+}
+.symbol-glossary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid #e0e7d5;
+  margin-top: 21px;
+  padding-top: 18px;
+  flex-wrap: wrap;
+}
+.symbol-glossary > span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #566641;
+}
+.symbol-glossary strong {
+  font-size: 13px;
+  color: #4e692f;
+}
+.symbol-glossary i {
+  font-size: 10px;
+  color: #596547;
+  font-style: normal;
+}
+.lesson-recap {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 55px;
+  border-top: 1px solid var(--line);
+  padding-top: 40px;
+  margin-top: 52px;
+}
+.lesson-recap .eyebrow {
+  font-size: 10px;
+  color: #57663e;
+}
+.lesson-recap h2 {
+  font-size: 29px;
+  margin-top: 12px;
+  color: #4c6932;
+}
+.lesson-recap ul {
+  list-style: none;
+  padding: 0;
+  margin: 21px 0;
+}
+.lesson-recap li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  color: #55673f;
+  line-height: 2.8;
+}
+.lesson-recap li svg {
+  color: #4c6927;
+}
+.lesson-recap > div > p {
+  font-size: 10px;
+  color: #586542;
+}
+.lesson-recap > div > p a {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.recap-action {
+  padding: 26px;
+  background: #eaf0de;
+  border: 1px solid #d9e4c9;
+  border-radius: 9px;
+}
+.recap-action > svg {
+  color: #506832;
+}
+.recap-action h3 {
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  color: #4c692f;
+  margin-top: 10px;
+}
+.recap-action > p {
+  font-size: 12px !important;
+  line-height: 1.8;
+  margin-top: 10px;
+  max-width: 260px;
+}
+.recap-action .button {
+  margin-top: 21px;
+  font-size: 12px;
+}
