@@ -1,11 +1,11 @@
 import { ArrowLeft, ChevronRight, House } from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
-import { routeLabels } from '../../data/navigation'
+import { getBreadcrumbItems } from '../../data/navigation'
 
 export function Breadcrumb() {
   const { pathname } = useLocation()
-  const parts = pathname.split('/').filter(Boolean)
-  const parent = '/' + parts.slice(0, -1).join('/')
+  const items = getBreadcrumbItems(pathname)
+  const parent = items.at(-2)?.path ?? '/'
   return (
     <div className="breadcrumb-row">
       <Link className="back-link" to={parent} aria-label="Kembali">
@@ -16,15 +16,13 @@ export function Breadcrumb() {
         <Link to="/" aria-label="Beranda">
           <House size={14} />
         </Link>
-        {parts.map((part, index) => (
-          <span key={index}>
+        {items.map((item, index) => (
+          <span key={item.path}>
             <ChevronRight size={12} />
-            {index === parts.length - 1 ? (
-              <span aria-current="page">{routeLabels[part] ?? part}</span>
+            {index === items.length - 1 ? (
+              <span aria-current="page">{item.label}</span>
             ) : (
-              <Link to={'/' + parts.slice(0, index + 1).join('/')}>
-                {routeLabels[part] ?? part}
-              </Link>
+              <Link to={item.path}>{item.label}</Link>
             )}
           </span>
         ))}

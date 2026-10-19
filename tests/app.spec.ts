@@ -190,6 +190,11 @@ test('navigation menu and breadcrumbs lead to working categories', async ({ page
   await expect(page).toHaveURL('/ipa/fisika')
   await page
     .locator('.topic-card')
+    .filter({ has: page.getByRole('heading', { name: 'Pesawat Sederhana', exact: true }) })
+    .click()
+  await expect(page).toHaveURL('/ipa/fisika/pesawat-sederhana')
+  await page
+    .locator('.topic-card')
     .filter({ has: page.getByRole('heading', { name: 'Katrol', exact: true }) })
     .click()
   await expect(page).toHaveURL(base)

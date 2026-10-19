@@ -2,10 +2,20 @@ import { ArrowLeft, ArrowUpRight, Construction } from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
 import { Breadcrumb } from '../components/navigation/Breadcrumb'
 import { routeLabels } from '../data/navigation'
+import type { PhysicsCategory, PhysicsTopic } from '../data/navigation'
 
-export function ComingSoonPage({ notFound = false }: { notFound?: boolean }) {
+export function ComingSoonPage({
+  notFound = false,
+  topic,
+  parent,
+}: {
+  notFound?: boolean
+  topic?: PhysicsTopic
+  parent?: PhysicsCategory
+}) {
   const { pathname } = useLocation()
-  const title = routeLabels[pathname.split('/').filter(Boolean).at(-1) ?? ''] ?? 'Materi baru'
+  const title =
+    topic?.title ?? routeLabels[pathname.split('/').filter(Boolean).at(-1) ?? ''] ?? 'Materi baru'
   return (
     <div className="container page-container">
       <Breadcrumb />
@@ -14,18 +24,34 @@ export function ComingSoonPage({ notFound = false }: { notFound?: boolean }) {
           <Construction size={43} strokeWidth={1.4} />
         </span>
         <span className="eyebrow">
-          {notFound ? '404 · HALAMAN TIDAK DITEMUKAN' : `${title.toUpperCase()} · COMING SOON`}
+          {notFound
+            ? '404 · HALAMAN TIDAK DITEMUKAN'
+            : topic
+              ? 'Coming Soon'
+              : `${title.toUpperCase()} · COMING SOON`}
         </span>
-        <h1>{notFound ? 'Sepertinya salah belok.' : 'Masih di meja eksperimen.'}</h1>
+        <h1>
+          {notFound ? 'Sepertinya salah belok.' : topic ? title : 'Masih di meja eksperimen.'}
+        </h1>
         <p>
           {notFound
             ? 'Alamat ini belum ada di ruang belajar kita. Kembali ke beranda atau coba lab katrol.'
-            : `Ruang ${title.toLowerCase()} sedang kami siapkan. Sambil menunggu, ada katrol yang bisa kamu eksplorasi sekarang.`}
+            : topic
+              ? 'Materi sedang disiapkan.'
+              : `Ruang ${title.toLowerCase()} sedang kami siapkan. Sambil menunggu, ada katrol yang bisa kamu eksplorasi sekarang.`}
         </p>
         <div className="hero-actions">
-          <Link to="/ipa/fisika/katrol" className="button button-dark">
-            Coba Lab Katrol <ArrowUpRight size={17} />
-          </Link>
+          {parent ? (
+            <Link to={parent.path} className="button button-dark">
+              <ArrowLeft size={16} /> Kembali ke {parent.title}
+            </Link>
+          ) : (
+            <>
+              <Link to="/ipa/fisika/katrol" className="button button-dark">
+                Coba Lab Katrol <ArrowUpRight size={17} />
+              </Link>
+            </>
+          )}
           <Link to="/" className="button button-outline">
             <ArrowLeft size={16} />
             Ke Beranda

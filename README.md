@@ -65,7 +65,7 @@ scripts/            Ekstraksi A, impor JSON B/C, dan verifikasi PDF
 
 - `/` — beranda dan lab mini interaktif.
 - `/ipa` — pilihan Fisika, Kimia, Biologi.
-- `/ipa/fisika` — daftar materi Fisika.
+- `/ipa/fisika` — kategori Usaha dan Energi serta Pesawat Sederhana.
 - `/ipa/fisika/katrol` — konsep, simulasi, perhitungan, segitiga rumus.
 - `/ipa/fisika/katrol#simulasi` — langsung ke simulasi.
 - `/ipa/fisika/katrol/latihan` — daftar latihan.
@@ -75,6 +75,35 @@ scripts/            Ekstraksi A, impor JSON B/C, dan verifikasi PDF
 - Alamat lain, termasuk ID latihan tidak dikenal, menampilkan halaman 404.
 
 Untuk hosting statis di luar Vite, arahkan permintaan route yang bukan file ke `index.html` agar deep link React Router tetap berfungsi.
+
+## Navigasi materi Fisika
+
+Seluruh definisi kategori, submateri, status dan label breadcrumb berada di `src/data/navigation.ts`. Halaman Fisika hanya menampilkan dua kategori. Sebelas route baru ditambahkan:
+
+```text
+/ipa/fisika/usaha-dan-energi
+  /usaha-dan-perpindahan
+  /energi-kinetik-dan-potensial
+  /energi-mekanik-dan-kekekalannya
+  /transformasi-energi
+  /hubungan-usaha-dan-energi
+  /daya
+
+/ipa/fisika/pesawat-sederhana
+  /tuas
+  /bidang-miring
+  /roda-berporos
+```
+
+Setiap path berindentasi ditambahkan ke path kategori di atasnya. Sembilan submateri tersebut membuka placeholder dengan nama materi, status Coming Soon, pesan “Materi sedang disiapkan.”, breadcrumb dan tombol kembali ke kategori induk. Tidak ada konten teori, rumus, simulator atau kuis baru.
+
+Kategori Pesawat Sederhana juga menampilkan Katrol sebagai materi aktif yang langsung membuka URL lamanya, `/ipa/fisika/katrol`. Breadcrumb mengikuti `IPA → Fisika → Pesawat Sederhana → Katrol`; untuk halaman latihan, dilanjutkan dengan `Latihan Soal → Latihan A/B/C`. Tombol kembali mengikuti induk breadcrumb sehingga dari Katrol kembali ke Pesawat Sederhana, sementara dari latihan tetap kembali ke modul/daftar latihan.
+
+Route lama Katrol, hash simulasi, latihan A/B/C, dan placeholder `materi-lainnya` tetap didukung. Identifier, versi bank, format penyimpanan dan key localStorage tidak dimigrasikan. Navbar, homepage, simulator, kuis, bank soal, kunci dan PDF tetap menggunakan implementasi/aset sebelumnya.
+
+`PhysicsCategoryPage` menggunakan kembali `TopicCard`, `Breadcrumb` dan layout/style kategori yang sudah tersedia. Seluruh placeholder baru menggunakan satu `ComingSoonPage`; route dan label dihasilkan dari konfigurasi yang sama. Untuk menambah materi, tambahkan definisinya di kategori terkait, buat halaman dan route kontennya bila sudah tersedia, lalu ubah status `available` menjadi `true`.
+
+Pengujian navigasi memeriksa seluruh kategori/placeholder, tombol kembali, breadcrumb, refresh nested route, lebar 320/768/1024 px, serta pemulihan progres lama A/B/C saat berpindah kategori. Seluruh pengujian simulator dan kuis tetap dijalankan sebagai regresi. Perubahan ini disiapkan dan diverifikasi secara lokal; deployment production dilakukan terpisah.
 
 ## Model fisika dan geometri
 

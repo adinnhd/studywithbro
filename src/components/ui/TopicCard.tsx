@@ -1,8 +1,8 @@
 import { ArrowUpRight } from 'lucide-react'
-import type { physicsTopics } from '../../data/navigation'
+import type { PhysicsTopic } from '../../data/navigation'
 import { Link } from 'react-router-dom'
 
-export function TopicCard({ topic }: { topic: (typeof physicsTopics)[number] }) {
+export function TopicCard({ topic, eyebrow }: { topic: PhysicsTopic; eyebrow?: string }) {
   const Icon = topic.icon
   return (
     <Link to={topic.path} className={`topic-card ${topic.available ? 'available' : ''}`}>
@@ -11,7 +11,7 @@ export function TopicCard({ topic }: { topic: (typeof physicsTopics)[number] }) 
       </span>
       <div>
         <span className="eyebrow">
-          {topic.available ? 'TERSEDIA SEKARANG' : 'SEDANG DISIAPKAN'}
+          {eyebrow ?? (topic.available ? 'TERSEDIA SEKARANG' : 'SEDANG DISIAPKAN')}
         </span>
         <h3>{topic.title}</h3>
         <p>{topic.description}</p>

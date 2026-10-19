@@ -5,6 +5,8 @@ import { CategoryPage } from './pages/CategoryPage'
 import { PulleyLessonPage } from './pages/PulleyLessonPage'
 import { ExercisesPage, ExerciseDetailPage } from './pages/ExercisesPage'
 import { ComingSoonPage } from './pages/ComingSoonPage'
+import { PhysicsCategoryPage } from './pages/PhysicsCategoryPage'
+import { physicsCategories } from './data/navigation'
 
 export default function App() {
   return (
@@ -13,6 +15,24 @@ export default function App() {
         <Route index element={<HomePage />} />
         <Route path="ipa" element={<CategoryPage type="ipa" />} />
         <Route path="ipa/fisika" element={<CategoryPage type="fisika" />} />
+        {physicsCategories.map((category) => (
+          <Route
+            key={category.path}
+            path={category.path}
+            element={<PhysicsCategoryPage category={category} />}
+          />
+        ))}
+        {physicsCategories.flatMap((category) =>
+          category.topics
+            .filter((topic) => !topic.available)
+            .map((topic) => (
+              <Route
+                key={topic.path}
+                path={topic.path}
+                element={<ComingSoonPage topic={topic} parent={category} />}
+              />
+            )),
+        )}
         <Route path="ipa/fisika/katrol" element={<PulleyLessonPage />} />
         <Route path="ipa/fisika/katrol/latihan" element={<ExercisesPage />} />
         <Route path="ipa/fisika/katrol/latihan/:exerciseId" element={<ExerciseDetailPage />} />

@@ -25,7 +25,7 @@ export function CategoryPage({ type }: { type: 'ipa' | 'fisika' }) {
       {physics ? (
         <div className="topic-grid">
           {physicsTopics.map((topic) => (
-            <TopicCard key={topic.title} topic={topic} />
+            <TopicCard key={topic.path} topic={topic} eyebrow="KATEGORI MATERI" />
           ))}
         </div>
       ) : (
