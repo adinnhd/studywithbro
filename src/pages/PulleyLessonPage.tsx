@@ -9,7 +9,7 @@ import {
   MoveUp,
   Orbit,
 } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Breadcrumb } from '../components/navigation/Breadcrumb'
 import { LessonNav } from '../components/navigation/LessonNav'
 import { PulleySimulator } from '../components/pulley/PulleySimulator'
@@ -17,6 +17,10 @@ import { PulleyVisualization } from '../components/pulley/PulleyVisualization'
 import { FormulaTriangle } from '../components/formula/FormulaTriangle'
 import { DEFAULT_INPUT, calculatePulley } from '../lib/physics/pulley'
 import type { PulleyKind } from '../types/pulley'
+import { WorkStage, EfficiencyStage } from '../components/pulley/learning/EnergyStages'
+import { AdvancedStage } from '../components/pulley/learning/AdvancedStage'
+import { FormulaReference } from '../components/formula/FormulaReference'
+import { StageHeading } from '../components/pulley/learning/LearningControls'
 
 const concepts: {
   kind: PulleyKind
@@ -51,6 +55,8 @@ const concepts: {
   },
 ]
 export function PulleyLessonPage() {
+  const { hash } = useLocation()
+  const currentStage = ['#usaha', '#efisiensi', '#analisis'].includes(hash) ? hash : '#dasar'
   return (
     <div className="container lesson-page">
       <Breadcrumb />
@@ -72,6 +78,33 @@ export function PulleyLessonPage() {
         </div>
       </header>
       <LessonNav />
+      <nav className="learning-stage-nav" aria-label="Empat tahap pembelajaran">
+        {[
+          ['dasar', 'Dasar Katrol', 'Kenali gaya & tali'],
+          ['usaha', 'Usaha dan Energi', 'Ikuti aliran energi'],
+          ['efisiensi', 'Efisiensi Katrol', 'Dari ideal ke nyata'],
+          ['analisis', 'Analisis Lanjutan', 'Bandingkan & pilih'],
+        ].map(([id, title, description], index) => (
+          <Link
+            key={id}
+            to={`#${id}`}
+            aria-current={currentStage === `#${id}` ? 'location' : undefined}
+          >
+            <span>0{index + 1}</span>
+            <div>
+              <strong>{title}</strong>
+              <small>{description}</small>
+            </div>
+          </Link>
+        ))}
+      </nav>
+      <div id="dasar" className="learning-basics-heading">
+        <StageHeading
+          number={1}
+          title="Kenali dulu cara katrol membantu."
+          description="Mulai dari konsep, coba simulator, lalu mainkan segitiga rumus."
+        />
+      </div>
       <section id="konsep" className="concept-section">
         <div className="concept-intro">
           <div>
@@ -144,6 +177,13 @@ export function PulleyLessonPage() {
       </section>
       <PulleySimulator />
       <FormulaTriangle />
+      <a className="learning-next" href="#usaha">
+        Lanjut ke tahap 2: dari gaya dan jarak menjadi usaha →
+      </a>
+      <WorkStage />
+      <EfficiencyStage />
+      <AdvancedStage />
+      <FormulaReference />
       <section className="lesson-recap">
         <div>
           <span className="eyebrow">SUDAH MULAI KEBAYANG?</span>
@@ -176,7 +216,7 @@ export function PulleyLessonPage() {
         <div className="recap-action">
           <BookOpen size={28} />
           <h3>Lanjut ke ruang latihan</h3>
-          <p>Halaman latihan sudah disiapkan. Soal dan PDF menyusul.</p>
+          <p>Tiga paket latihan siap dicoba. Nilai dan pembahasan terbuka setelah submit.</p>
           <Link className="button button-dark" to="/ipa/fisika/katrol/latihan">
             Lihat Latihan <ArrowUpRight size={17} />
           </Link>

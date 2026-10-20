@@ -4,6 +4,8 @@
 
 Platform belajar interaktif berbahasa Indonesia. MVP 1 mengimplementasikan Fisika: Katrol untuk siswa SMP. Aplikasi berjalan sepenuhnya di browser, tanpa backend, akun, atau database.
 
+Modul Katrol kini memiliki empat tahap: Dasar Katrol, Usaha dan Energi, Efisiensi Katrol, serta Analisis Lanjutan. Lihat [audit, fitur, asumsi fisika, dan batas pengujian](docs/pulley-learning.md) untuk ekstensi pembelajaran ini.
+
 ## Jalankan secara lokal
 
 Gunakan Node.js 22.12+ atau Node.js 24 LTS dan npm.
